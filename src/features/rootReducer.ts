@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import { reducer as loginReducer } from './isLoggedIn'
 import { reducer as productsReducer } from './products'
-
+import { reducer as cartReducer } from './cart'
 
 const rootReducer = combineReducers({
 	isLoggedIn: loginReducer,
 	products: productsReducer,
-	// cartReducer
+	cart: cartReducer
 })
 /*
 state: {

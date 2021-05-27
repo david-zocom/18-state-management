@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { Product } from '../types/Product'
-// TODO: import actions from cart reducer
+import { actions } from '../features/cart'
 
 const ProductList = () => {
 	const dispatch = useDispatch()
