@@ -5,10 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil'
 
+import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit'
+import { rootReducer } from './features/rootReducer'
+
+const store = configureStore({
+    reducer: rootReducer
+})
+
+
 ReactDOM.render(
     <React.StrictMode>
         <RecoilRoot>
+        <Provider store={store}>
             <App />
+        </Provider>
         </RecoilRoot>
     </React.StrictMode>,
     document.getElementById('root')
