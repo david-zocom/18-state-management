@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil'
 import cartAtom from './atoms/cart'
 import './App.css';
 import UserStatus from './components/UserStatus'
+import ProductList from './components/ProductList'
 
 function App() {
     const [theme, setTheme] = useState('light')
@@ -56,6 +57,7 @@ function App() {
         {view === 'redux' ? (
             <>
             <UserStatus />
+            <ProductList />
             </>
         ) : null}
 
