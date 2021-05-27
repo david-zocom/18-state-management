@@ -9,6 +9,7 @@ import './App.css';
 function App() {
     const [theme, setTheme] = useState('light')
     const [cartCount/*, setCartCount*/] = useRecoilState(cartAtom)
+    const [view, setView] = useState('context')
 
     // För att ändra context finns 2 alternativ:
     // 1. skicka "toggleTheme" med props
@@ -23,17 +24,23 @@ function App() {
         <ThemeContext.Provider value={theme}>
         <div className="App">
         <header className="App-header">
-            header
+            <button onClick={() => setView('context')}> Context </button>
+            <button onClick={() => setView('recoil')}> Recoil </button>
+            <button onClick={() => setView('redux')}> Redux </button>
         </header>
         <main>
+        {view === 'context' ? (
+            <>
             <p> Theme is: {theme}. </p>
             <button onClick={toggleTheme}> Toggle theme </button>
 
             <ThemedButton />
             <ThemedButton />
+            </>
+        ) : null}
 
-            <hr/>
-
+        {view === 'recoil' ? (
+            <>
             <CartItem name={'banana'} />
             <CartItem name={'apple'} />
             <CartItem name={'mango'} />
@@ -42,6 +49,15 @@ function App() {
             <p>
                 Number of items in cart: {cartCount}.
             </p>
+            </>
+        ) : null}
+
+        {view === 'redux' ? (
+            <>
+            TODO
+            </>
+        ) : null}
+
         </main>
         </div>
         </ThemeContext.Provider>

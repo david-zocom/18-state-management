@@ -11,3 +11,13 @@
 	color: var(--light-bg);
 	background-color: var(--light-fg);
 }
+
+.cart-item {
+	display: flex;
+	flex-direction: row;
+	width: 15em;
+	border-bottom: 1px solid lightgray;
+	padding: 0.2em 0.4em;
+}
+.cart-item > span { flex: 2; }
+.cart-item > * { flex: 1; }

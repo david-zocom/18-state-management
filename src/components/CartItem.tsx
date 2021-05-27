@@ -20,7 +20,7 @@ const CartItem = ({ name }: Props) => {
 	}
 
 	return (
-		<div>
+		<div className="cart-item">
 			<span>{name}: {count}</span>
 			<button onClick={increase}> +1 </button>
 			<button onClick={decrease}> -1 </button>
